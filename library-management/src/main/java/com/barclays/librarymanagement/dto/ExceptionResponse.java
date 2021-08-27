@@ -6,7 +6,6 @@ public class ExceptionResponse {
 	private String errorMessage;
 
 	public ExceptionResponse() {
-		// TODO Auto-generated constructor stub
 	}
 
 	public ExceptionResponse(Integer errorCode, String errorMessage) {

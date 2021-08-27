@@ -15,7 +15,7 @@ import static springfox.documentation.builders.PathSelectors.regex;
 @EnableSwagger2
 public class SwaggerConfig {
 	@Bean
-    public Docket LibraryApi() {
+    public Docket LibrarySwaggerApi() {
         return new Docket(DocumentationType.SWAGGER_2)
                 .select()
                 .apis(RequestHandlerSelectors.basePackage("com.barclays.librarymanagement.controller"))
@@ -24,7 +24,7 @@ public class SwaggerConfig {
                 .apiInfo(metaData());
     }
     private ApiInfo metaData() {
-        ApiInfo apiInfo = new ApiInfo(
+        return new ApiInfo(
                 "Spring Boot REST API for Library",
                 "Spring Boot REST API for Library Store",
                 "1.0",
@@ -32,6 +32,5 @@ public class SwaggerConfig {
                 new Contact("sachin nirne", "", "sachinnirne24@gmail.com"),
                "",
                 "");
-        return apiInfo;
     }
 }
