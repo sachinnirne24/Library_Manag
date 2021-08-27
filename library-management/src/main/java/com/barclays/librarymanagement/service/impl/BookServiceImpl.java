@@ -1,6 +1,7 @@
 package com.barclays.librarymanagement.service.impl;
 
 import java.util.List;
+import java.util.Objects;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -17,17 +18,21 @@ public class BookServiceImpl implements BookService {
 
 	@Override
 	public List<Book> findAll() {
-		return null;
+		return bookDao.findAll();
 	}
 
 	@Override
-	public Book findByName(String bookName) {
-		return null;
+	public List<Book> findByName(String bookName) {
+		if(Objects.isNull(bookName))
+			throw new IllegalArgumentException("Book name wasn't found");
+		return bookDao.findByBookName(bookName);
 	}
 
 	@Override
 	public Book createBook(Book book) {
-		return null;
+		if(Objects.isNull(book))
+			throw new IllegalArgumentException("Book object wasn't found");
+		return bookDao.save(book);
 	}
 
 }

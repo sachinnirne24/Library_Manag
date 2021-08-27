@@ -27,6 +27,24 @@ public class Book implements Serializable {
 	@Column(name="price")
 	private Double price;
 
+	public Book() {
+		
+	}
+	
+	
+	public Book(Long bookId, String bookName, String bookAuthor, String publication, String publicationNumber,
+			Integer yearOfPublication, Double price) {
+		super();
+		this.bookId = bookId;
+		this.bookName = bookName;
+		this.bookAuthor = bookAuthor;
+		this.publication = publication;
+		this.publicationNumber = publicationNumber;
+		this.yearOfPublication = yearOfPublication;
+		this.price = price;
+	}
+
+
 	public Long getBookId() {
 		return bookId;
 	}

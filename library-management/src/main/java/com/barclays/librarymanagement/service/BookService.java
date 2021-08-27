@@ -8,7 +8,7 @@ public interface BookService {
 
 	List<Book> findAll();
 
-	Book findByName(String bookName);
+	List<Book> findByName(String bookName);
 
 	Book createBook(Book book);
 
